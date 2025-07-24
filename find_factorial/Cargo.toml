@@ -1,6 +1,5 @@
-workspace = { members = ["reverse_string"] }
 [package]
-name = "groceries"
+name = "find_factorial"
 version = "0.1.0"
 edition = "2021"
 

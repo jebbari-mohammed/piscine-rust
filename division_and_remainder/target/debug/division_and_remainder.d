@@ -1,1 +1,0 @@
-/home/mojebbari/piscine-rust/division_and_remainder/target/debug/division_and_remainder: /home/mojebbari/piscine-rust/division_and_remainder/src/lib.rs /home/mojebbari/piscine-rust/division_and_remainder/src/main.rs

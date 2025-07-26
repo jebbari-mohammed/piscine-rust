@@ -30,5 +30,5 @@ pub fn split_at(v: &str, index: usize) -> (&str, &str) {
 }
 
 pub fn find(v: &str, pat: char) -> usize {
- v.find(pat).unwrap_or(999)
+ v.find(pat).expect("")
 }

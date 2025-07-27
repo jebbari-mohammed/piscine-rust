@@ -18,15 +18,10 @@ impl Circle {
     pub fn area(self) -> f64 {
     self.radius*self.radius*PI
    }
-    pub fn intersect(self, cr : Circle) -> bool {
-    if self.center.0 + self.radius < cr.center.0 - cr.radius {
-        return true
-    };
-    if self.center.1 + self.radius < cr.center.1 - cr.radius {
-        return true
-    };
-    false
-   }
+    pub fn intersect(self, other: Circle) -> bool {
+        let distance = self.center.distance(other.center);
+        distance <= (self.radius + other.radius) && distance >= (self.radius - other.radius).abs()
+    }
 }
 
 #[derive(Debug, Clone, Copy)]

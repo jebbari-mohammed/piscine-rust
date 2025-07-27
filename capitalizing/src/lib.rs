@@ -16,10 +16,11 @@ pub fn title_case(input: &str) -> String {
     let mut strr = String::new();
     for ch in input.split_whitespace() {
         strr.push_str(&capitalize_first(ch));
-        strr.push(' ')
-    };
-    strr
+        strr.push(' ');
+    }
+    strr.trim_end().to_string()
 }
+
 
 pub fn change_case(input: &str) -> String {
     let mut result = String::new();

@@ -17,5 +17,4 @@ pub fn first_subword(mut s: String) -> String {
         };
         return s[0..index+1].to_string()
     };
-    s
 }

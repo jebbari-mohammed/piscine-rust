@@ -1,3 +1,4 @@
+workspace = { members = ["changes"] }
 [package]
 name = "copy"
 version = "0.1.0"

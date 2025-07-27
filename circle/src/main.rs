@@ -1,11 +1,11 @@
 use circle::*;
 
 fn main() {
-    // let circle = Circle::new(500.0, 500.0, 150.0);
-        let circle = Circle {
-        center: Point(500.0, 500.0),
-        radius: 150.0,
-    };
+    let circle = Circle::new(500.0, 500.0, 150.0);
+    //     let circle = Circle {
+    //     center: Point(500.0, 500.0),
+    //     radius: 150.0,
+    // };
     let circle1 = Circle {
         center: Point(80.0, 115.0),
         radius: 30.0,

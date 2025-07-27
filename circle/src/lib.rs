@@ -19,8 +19,7 @@ impl Circle {
     self.radius*self.radius*PI
    }
     pub fn intersect(self, other: Circle) -> bool {
-        let distance = self.center.distance(other.center);
-        distance <= (self.radius + other.radius) && distance >= (self.radius - other.radius).abs()
+        (self.center).distance(other.center)<self.radius+other.radius
     }
 }
 
@@ -29,6 +28,6 @@ pub struct Point(pub f64, pub f64);
 
 impl Point {
     pub fn distance(self,point: Point) -> f64 {
-        ((self.0 - point.0 ) + (self.1-point.1)).sqrt()
+        ((self.0 - point.0 ).powf(2.0) + (self.1-point.1).powf(2.0)).sqrt()
     }
 }

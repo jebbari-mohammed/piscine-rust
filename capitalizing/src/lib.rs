@@ -13,12 +13,30 @@ pub fn capitalize_first(input: &str) -> String {
 }
 
 pub fn title_case(input: &str) -> String {
-    let mut strr = String::new();
-    for ch in input.split_whitespace() {
-        strr.push_str(&capitalize_first(ch));
-        strr.push(' ');
+    let mut result = String::new();
+    let mut word = String::new();
+    let mut in_word = false;
+
+    for ch in input.chars() {
+        if ch.is_whitespace() {
+            if in_word {
+                result.push_str(&capitalize_first(&word));
+                word.clear();
+                in_word = false;
+            }
+            result.push(ch); 
+        } else {
+            word.push(ch);
+            in_word = true;
+        }
     }
-    strr.trim_end().to_string()
+
+    if in_word {
+        result.push_str(&capitalize_first(&word));
+    }
+
+ 
+    result
 }
 
 

@@ -28,10 +28,25 @@ pub fn delete_and_backspace(s: &mut String) { // hel-lo
 pub fn do_operations(v: &mut [String]) {
     for i in v.iter_mut() {
         if i.contains('+') {
-            let x = i.split('+');
-            *i = sum(x[0],x[1]);
+            let parts : Vec<&str> = i.split('+').collect();
+
+                *i = sum(parts[0], parts[1]);
+            
         } else if i.contains('-') {
-            *i = sub(i.clone());
+            let parts: Vec<&str> = i.split('-').collect();
+                *i = sub(parts[0], parts[1]);
         }
     }
+}
+
+pub fn sum(x: &str, y: &str) -> String {
+    let a: i32 = x.trim().parse().unwrap();
+    let b: i32 = y.trim().parse().unwrap();
+    (a + b).to_string()
+}
+
+pub fn sub(x: &str, y: &str) -> String {
+    let a: i32 = x.trim().parse().unwrap();
+    let b: i32 = y.trim().parse().unwrap();
+    (a - b).to_string()
 }

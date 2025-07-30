@@ -14,7 +14,10 @@ pub fn arrange_phrase(phrase: &str) -> String {
             }
                 strr.push(charr);
             };
-            strr.push(' ');
+            if num != (lenght+1).try_into().unwrap() {
+
+                strr.push(' ');
+            }
             result.push_str(&strr);
             strr = String::new();
         }

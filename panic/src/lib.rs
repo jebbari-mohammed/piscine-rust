@@ -4,6 +4,6 @@ pub fn open_file(s: &str) -> File {
     let f = File::open(s);
     match f {
         Ok(file) => file,
-        Err(_) => panic!()
+        Err(error) => panic!("{}", error)
     }
 }

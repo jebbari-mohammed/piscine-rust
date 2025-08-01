@@ -27,11 +27,19 @@ pub struct FlagsHandler {
 
 impl FlagsHandler {
     pub fn add_flag(&mut self, flag: Flag, func: Callback) {
-        todo!()
+        self.flags.insert(flag.short_hand.clone(), func);
+        self.flags.insert(flag.long_hand.clone(), func);
     }
 
     pub fn exec_func(&self, input: &str, argv: &[&str]) -> Result<String, String> {
-        todo!()
+        if let Some(cb) = self.flags.get(input) {
+            if argv.len() < 2 {
+                return Err("not enough arguments".to_string());
+            }
+            cb(argv[0], argv[1]).map_err(|e| e.to_string())
+        } else {
+            Err("flag not found".to_string())
+        }
     }
 }
 

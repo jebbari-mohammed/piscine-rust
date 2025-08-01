@@ -14,11 +14,16 @@ pub fn fetch_data(server: Result<&str, &str>, security_level: Security) -> Strin
 
         Security::Warning => server.unwrap_or("WARNING: check the server").to_string(),
 
-        Security::NotFound => server.unwrap_or_else(|msg| format!("Not found: {}", msg)),
+        Security::NotFound =>
+            match server {
+                Ok(val) => val.to_string(),
+                Err(msg) => format!("Not found: {}", msg),
+            }
 
-        Security::UnexpectedUrl => match server {
-            Ok(url) => panic!("{}", url),
-            Err(msg) => msg.to_string(),
-        },
+        Security::UnexpectedUrl =>
+            match server {
+                Ok(url) => panic!("{}", url),
+                Err(msg) => msg.to_string(),
+            }
     }
 }

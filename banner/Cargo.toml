@@ -1,6 +1,5 @@
-workspace = { members = ["arrange_it"] }
 [package]
-name = "tic_tac_toe"
+name = "banner"
 version = "0.1.0"
 edition = "2021"
 

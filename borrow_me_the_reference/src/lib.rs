@@ -34,7 +34,9 @@ pub fn do_operations(v: &mut [String]) {
             
         } else if i.contains('-') {
             let parts: Vec<&str> = i.split('-').collect();
+            if parts.len() == 2 {
                 *i = sub(parts[0], parts[1]);
+            }
         }
     }
 }

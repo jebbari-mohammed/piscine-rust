@@ -1,6 +1,10 @@
 pub fn num_to_ordinal(x: u32) -> String {
     let mut num = x.to_string() ;
-    let case = &num[(num.len()-2)..num.len()];
+    let case = if num.len() >= 2 {
+        &num[num.len() - 2..]
+    } else {
+        &num[..]
+    };
     let x: u32 = case.parse().unwrap();
     if x <= 19 && x >= 10 {
         num.push_str("th");

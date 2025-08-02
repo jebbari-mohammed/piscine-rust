@@ -17,13 +17,22 @@ pub fn talking(text: &str) -> &str {
     }
 }
 pub fn everything_is_uppercase(s: &str) -> bool {
-    if !s.chars().all(|c| c.is_alphabetic()) {
-        return false;
+    let mut pass = false;
+    for ch in s.chars() {
+        if ch.is_alphabetic() {
+            pass = true;
+            break
+        }
     }
+    if pass {
+
     for ch in s.chars() {
         if ch.is_lowercase() {
             return false;
         }
     }
     true
+} else {
+    return false;
+}
 }

@@ -5,5 +5,5 @@ fn main() {
     println!("{:?}", talking("Hello how are you?"));
     println!("{:?}", talking("WHAT'S GOING ON?"));
     println!("{:?}", talking("something"));
-    println!("{:?}", talking("             "));
+    println!("{:?}", talking("                       "));
 }

@@ -10,7 +10,7 @@ pub fn score(s : &str) -> u64 {
         if ch == 'B' || ch == 'C' || ch == 'M' || ch == 'P'  {
             score += 3;
         };
-        if ch == 'F' || ch == 'H' || ch == 'V' || ch == 'M' || ch == 'Y'  {
+        if ch == 'F' || ch == 'H' || ch == 'V' || ch == 'W' || ch == 'Y'  {
             score += 4;
         };
         if ch == 'K'  {

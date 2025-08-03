@@ -6,7 +6,8 @@ pub fn is_permutation(s1: &str, s2: &str) -> bool {
     }
     for ch in s2.chars() {
         match map.get(&ch) {
-            Some(_) => map.insert(ch,true),
+            Some(false) => map.insert(ch,true),
+            Some(true) => map.insert(ch,false),
             None => map.insert(ch,false),
         };
     }

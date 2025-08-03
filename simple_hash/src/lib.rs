@@ -4,13 +4,9 @@ pub fn word_frequency_counter<'a>(words: &[&'a str]) -> HashMap<&'a str, usize> 
     let mut map = HashMap::new();
     for &word in words {
         match map.get(word) {
-            Some(&count) => {
-                map.insert(word, count + 1);
-            },
-            None => {
-                map.insert(word, 1);
-            }
-        }
+            Some(&count) => map.insert(word, count+1),
+            None => map.insert(word,1),
+        };
     }
     map
 }

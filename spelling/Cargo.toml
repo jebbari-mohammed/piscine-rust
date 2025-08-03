@@ -1,6 +1,5 @@
-workspace = { members = ["macro_calculator"] }
 [package]
-name = "does_it_fit"
+name = "spelling"
 version = "0.1.0"
 edition = "2021"
 

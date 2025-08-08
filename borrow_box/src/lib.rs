@@ -29,7 +29,7 @@ impl GameSession {
 
     pub fn update_score(&mut self, user_name: &str) {
         // if !deleted {
-        if self.nb_games>0 {
+        if self.nb_games >= 0 {
             if self.p1.0 == user_name {
                 self.p1.1 += 1;
                 self.nb_games -= 1;

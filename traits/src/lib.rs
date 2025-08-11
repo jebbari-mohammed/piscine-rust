@@ -45,13 +45,13 @@ impl Player {
 use std::fmt;
 
 impl fmt::Display for Player {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         writeln!(f, "{}", self.name)?;
         writeln!(
             f,
-            "Strength: {:.2}, Score: {}, Money: {}",
+            "Strength: {}, Score: {}, Money: {}",
             self.strength, self.score, self.money
         )?;
-        writeln!(f, "Weapons: {:?}", self.weapons)
+        write!(f, "Weapons: {:?}", self.weapons)
     }
 }

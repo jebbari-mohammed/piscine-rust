@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug , PartialEq)]
 pub struct Matrix<T>(pub Vec<Vec<T>>);
 
 pub trait Scalar {

@@ -1,0 +1,1 @@
+/home/mojebbari/piscine-rust/matrix_mult/target/debug/matrix_mult: /home/mojebbari/piscine-rust/lalgebra_scalar/src/lib.rs /home/mojebbari/piscine-rust/matrix_mult/src/lib.rs /home/mojebbari/piscine-rust/matrix_mult/src/main.rs
